@@ -1,0 +1,47 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :image %>
+  <%= text_input f, :image %>
+  <%= error_tag f, :image %>
+
+  <%= label f, :animal_type %>
+  <%= text_input f, :animal_type %>
+  <%= error_tag f, :animal_type %>
+
+  <%= label f, :answer_description %>
+  <%= textarea f, :answer_description %>
+  <%= error_tag f, :answer_description %>
+
+  <%= label f, :correct_answer %>
+  <%= text_input f, :correct_answer %>
+  <%= error_tag f, :correct_answer %>
+
+  <%= label f, :question_description %>
+  <%= text_input f, :question_description %>
+  <%= error_tag f, :question_description %>
+
+  <%= label f, :wrong_answer %>
+  <%= text_input f, :wrong_answer %>
+  <%= error_tag f, :wrong_answer %>
+
+  <%= label f, :user_id %>
+  <%= number_input f, :user_id %>
+  <%= error_tag f, :user_id %>
+
+  <%= label f, :question_image %>
+  <%= file_input f, :question_image %>
+  <%= error_tag f, :question_image %>
+
+  <%= label f, :description_image %>
+  <%= file_input f, :description_image %>
+  <%= error_tag f, :description_image %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>
