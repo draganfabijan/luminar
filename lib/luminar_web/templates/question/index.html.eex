@@ -1,0 +1,40 @@
+<h1>Listing Questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Animal type</th>
+      <th>Answer description</th>
+      <th>Correct answer</th>
+      <th>Question description</th>
+      <th>Wrong answer</th>
+      <th>User</th>
+      <th>Question image</th>
+      <th>Description image</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for question <- @questions do %>
+    <tr>
+      <td><%= question.animal_type %></td>
+      <td><%= question.answer_description %></td>
+      <td><%= question.correct_answer %></td>
+      <td><%= question.question_description %></td>
+      <td><%= question.wrong_answer %></td>
+      <td><%= question.user_id %></td>
+      <img src="<%= Luminar.ImageUploader.url({question.image, question}, :original)%>"><br>
+      <img src="<%= Luminar.ImageUploader.url({question.image, question}, :original)%>"><br>
+      <td>
+        <span><%= link "Show", to: Routes.question_path(@conn, :show, question) %></span>
+        <span><%= link "Edit", to: Routes.question_path(@conn, :edit, question) %></span>
+        <span><%= link "Delete", to: Routes.question_path(@conn, :delete, question), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Question", to: Routes.question_path(@conn, :new) %></span>

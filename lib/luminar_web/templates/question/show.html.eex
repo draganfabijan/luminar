@@ -1,0 +1,48 @@
+<h1>Show Question</h1>
+
+<ul>
+
+  <li>
+    <strong>Animal type:</strong>
+    <%= @question.animal_type %>
+  </li>
+
+  <li>
+    <strong>Answer description:</strong>
+    <%= @question.answer_description %>
+  </li>
+
+  <li>
+    <strong>Correct answer:</strong>
+    <%= @question.correct_answer %>
+  </li>
+
+  <li>
+    <strong>Question description:</strong>
+    <%= @question.question_description %>
+  </li>
+
+  <li>
+    <strong>Wrong answer:</strong>
+    <%= @question.wrong_answer %>
+  </li>
+
+  <li>
+    <strong>User:</strong>
+    <%= @question.user_id %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <img src="<%= Luminar.ImageUploader.url({@question.image, @question}, :original)%>"><br>
+  </li>
+
+  <li>
+    <strong>Description image:</strong>
+    <img src="<%= Luminar.ImageUploader.url({@question.description_image, @question}, :original)%>"><br>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.question_path(@conn, :edit, @question) %></span>
+<span><%= link "Back", to: Routes.question_path(@conn, :index) %></span>

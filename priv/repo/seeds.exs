@@ -9,3 +9,9 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+# import Ecto.Query, only: [from: 2]
+# alias Luminar.Questions
+# alias Luminar.Repo
+# alias Luminar.Questions.Question
+# Repo.all(from q in "questions", where: q.id != 100, select: q.image )
