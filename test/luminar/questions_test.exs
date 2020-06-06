@@ -6,9 +6,9 @@ defmodule Luminar.QuestionsTest do
   describe "questions" do
     alias Luminar.Questions.Question
 
-    @valid_attrs %{animal_type: "some animal_type", answer_description: "some answer_description", correct_answer: "some correct_answer", description_image: "some description_image", image: "some image", question_description: "some question_description", question_image: "some question_image", user_id: 42, wrong_answer: "some wrong_answer"}
-    @update_attrs %{animal_type: "some updated animal_type", answer_description: "some updated answer_description", correct_answer: "some updated correct_answer", description_image: "some updated description_image", image: "some updated image", question_description: "some updated question_description", question_image: "some updated question_image", user_id: 43, wrong_answer: "some updated wrong_answer"}
-    @invalid_attrs %{animal_type: nil, answer_description: nil, correct_answer: nil, description_image: nil, image: nil, question_description: nil, question_image: nil, user_id: nil, wrong_answer: nil}
+    @valid_attrs %{animal_type: "some animal_type", answer_description: "some answer_description", correct_answer: "some correct_answer", description_image: "some description_image", image: "some image", question_description: "some question_description", image: "some image", user_id: 42, wrong_answer: "some wrong_answer"}
+    @update_attrs %{animal_type: "some updated animal_type", answer_description: "some updated answer_description", correct_answer: "some updated correct_answer", description_image: "some updated description_image", image: "some updated image", question_description: "some updated question_description", image: "some updated image", user_id: 43, wrong_answer: "some updated wrong_answer"}
+    @invalid_attrs %{animal_type: nil, answer_description: nil, correct_answer: nil, description_image: nil, image: nil, question_description: nil, image: nil, user_id: nil, wrong_answer: nil}
 
     def question_fixture(attrs \\ %{}) do
       {:ok, question} =
@@ -37,7 +37,7 @@ defmodule Luminar.QuestionsTest do
       assert question.description_image == "some description_image"
       assert question.image == "some image"
       assert question.question_description == "some question_description"
-      assert question.question_image == "some question_image"
+      assert question.image == "some image"
       assert question.user_id == 42
       assert question.wrong_answer == "some wrong_answer"
     end
@@ -55,7 +55,7 @@ defmodule Luminar.QuestionsTest do
       assert question.description_image == "some updated description_image"
       assert question.image == "some updated image"
       assert question.question_description == "some updated question_description"
-      assert question.question_image == "some updated question_image"
+      assert question.image == "some updated image"
       assert question.user_id == 43
       assert question.wrong_answer == "some updated wrong_answer"
     end

@@ -19,16 +19,14 @@
   <tbody>
 <%= for question <- @questions do %>
     <tr>
-      <td><%= question.image %></td>
       <td><%= question.animal_type %></td>
       <td><%= question.answer_description %></td>
       <td><%= question.correct_answer %></td>
       <td><%= question.question_description %></td>
       <td><%= question.wrong_answer %></td>
       <td><%= question.user_id %></td>
-      <td><%= question.question_image %></td>
-      <td><%= question.description_image %></td>
-
+      <img src="<%= Luminar.ImageUploader.url({question.image, question}, :original)%>"><br>
+      <img src="<%= Luminar.ImageUploader.url({question.image, question}, :original)%>"><br>
       <td>
         <span><%= link "Show", to: Routes.question_path(@conn, :show, question) %></span>
         <span><%= link "Edit", to: Routes.question_path(@conn, :edit, question) %></span>

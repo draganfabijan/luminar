@@ -3,14 +3,13 @@ defmodule Luminar.Repo.Migrations.CreateQuestions do
 
   def change do
     create table(:questions) do
-      add :image, :string
       add :animal_type, :string
       add :answer_description, :text
       add :correct_answer, :string
       add :question_description, :string
       add :wrong_answer, :string
       add :user_id, :integer
-      add :question_image, :string
+      add :image, :string
       add :description_image, :string
 
       timestamps()

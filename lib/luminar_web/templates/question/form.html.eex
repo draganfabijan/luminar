@@ -5,10 +5,6 @@
     </div>
   <% end %>
 
-  <%= label f, :image %>
-  <%= text_input f, :image %>
-  <%= error_tag f, :image %>
-
   <%= label f, :animal_type %>
   <%= text_input f, :animal_type %>
   <%= error_tag f, :animal_type %>
@@ -33,9 +29,9 @@
   <%= number_input f, :user_id %>
   <%= error_tag f, :user_id %>
 
-  <%= label f, :question_image %>
-  <%= file_input f, :question_image %>
-  <%= error_tag f, :question_image %>
+  <%= label f, :image %>
+  <%= file_input f, :image %>
+  <%= error_tag f, :image %>
 
   <%= label f, :description_image %>
   <%= file_input f, :description_image %>

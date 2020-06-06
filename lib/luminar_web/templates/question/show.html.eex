@@ -3,11 +3,6 @@
 <ul>
 
   <li>
-    <strong>Image:</strong>
-    <%= @question.image %>
-  </li>
-
-  <li>
     <strong>Animal type:</strong>
     <%= @question.animal_type %>
   </li>
@@ -38,13 +33,13 @@
   </li>
 
   <li>
-    <strong>Question image:</strong>
-    <%= @question.question_image %>
+    <strong>Image:</strong>
+    <img src="<%= Luminar.ImageUploader.url({@question.image, @question}, :original)%>"><br>
   </li>
 
   <li>
     <strong>Description image:</strong>
-    <%= @question.description_image %>
+    <img src="<%= Luminar.ImageUploader.url({@question.description_image, @question}, :original)%>"><br>
   </li>
 
 </ul>
