@@ -26,7 +26,7 @@
       <td><%= question.wrong_answer %></td>
       <td><%= question.user_id %></td>
       <img src="<%= Luminar.ImageUploader.url({question.image, question}, :original)%>"><br>
-      <img src="<%= Luminar.ImageUploader.url({question.image, question}, :original)%>"><br>
+      <img src="<%= Luminar.ImageUploader.url({question.description_image, question}, :original)%>"><br>
       <td>
         <span><%= link "Show", to: Routes.question_path(@conn, :show, question) %></span>
         <span><%= link "Edit", to: Routes.question_path(@conn, :edit, question) %></span>
